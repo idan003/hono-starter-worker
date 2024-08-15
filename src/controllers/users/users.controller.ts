@@ -1,9 +1,8 @@
 import { HonoApp } from "../../types";
 import {
-  updateDeviceIdSchema,
   userAuthSchema,
 } from "../../db/validations/users";
-import { userAuthService, userUpdateDevice } from "./users.service";
+import { userAuthService } from "./users.service";
 import { validator } from "hono/validator";
 import { formatZodError } from "../../middlewares/common/utils";
 
@@ -17,10 +16,10 @@ export default function (app: HonoApp) {
       return parsed.data;
     }),
     async (ctx) => {
-      const { walletId } = ctx.req.valid("json");
+      const { email } = ctx.req.valid("json");
 
       try {
-        return ctx.json(await userAuthService(walletId, ctx.env.mySecretKey));
+        return ctx.json(await userAuthService(email, ctx.env.mySecretKey));
       } catch (e: any) {
         throw Error(e.message, { cause: 500 });
       }

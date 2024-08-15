@@ -8,7 +8,6 @@ import authMiddleware from "./middlewares/auth.middleware";
 import { requestId } from "hono/request-id";
 import { timeout } from "hono/timeout";
 
-import { Env } from "hono";
 import {
   errorHandler,
   notFound,
