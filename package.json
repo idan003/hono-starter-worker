@@ -1,7 +1,7 @@
 {
   "name": "hono-starter-api",
   "version": "0.0.0",
-  "description": "floorsee api is a miror of the blockchain.",
+  "description": "hono rest api.",
   "scripts": {
     "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler deploy --minify src/index.ts",
