@@ -40,7 +40,7 @@ bun db:generate
 ```
 
 ```bash
-wrangler d1 execute <DATABASE_NAME> --local --file=./src/db//0000_short_lockheed.sql
+wrangler d1 execute <DATABASE_NAME> --local --file=./src/db/migrations/0000_short_lockheed.sql
 ```
 
 ## Deployment to Worker (Cloudflare PROD)
